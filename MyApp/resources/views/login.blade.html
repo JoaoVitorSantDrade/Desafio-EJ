@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='../css/login.css' rel="stylesheet"> <!--Lembrar de colocar {{ }}-->
+        <title>Login E.J</title>
+
+        <!--Fonts-->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300;400;700;900&display=swap');
+        </style>
+
+        <!--<link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.min.css')}}">
+        <script type="text/javascript" src="{{URL::asset('assets/js/jquery.min.js')}}"></script>-->
+        <script src="../js/login.js"></script> <!--Passar pro laravel depois-->
+
+    </head>
+    <body class="antialiased">  
+        <div class="card">
+            <div class="card-modal card-login card-default unselectable">
+                <div class="align-center">
+                    <h2>Login</h2>
+                </div>
+                <form name="login" method="post">
+                    <section>
+                        <div class="label-div">
+                            <label for="user_name">Nome de Usuário</label>
+                            <input id="user_name" class="input-user"name="user_name" type="text" placeholder="Digite seu Nome de Usuário" required>
+                        </div>
+                        <div class="label-div">
+                            <label for="user_psw">Senha</label>
+                            <input id="user_psw" class="input-psw" name="user_psw" type="password" placeholder="Digite sua Senha" required>
+                            <button id="visibility-icon" class="no-visibility" type="button"></button>
+                        </div>
+                        <div>
+                            <div class="label-div">
+                                <button class="send-login" type="submit"></button>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div> 
+    </body>
+</html>

@@ -1,0 +1,150 @@
+body{
+    background-image: url(../icons/EJ.png);
+    background-repeat: no-repeat;
+    background-size: 50em;
+    background-position: center top;
+    background-color: rgb(235,243,250);
+}
+
+.align-center{
+    margin-inline: auto;
+}
+label ,input{
+    display: flex;
+    flex-direction: column;
+    
+}
+.input-user{
+    background-image: url(../icons/account_circle_black_36dp.svg);
+}
+.input-psw{
+    background-image: url(../icons/lock_black_36dp.svg);
+    padding-right: 45px;
+}
+.label-div{
+    margin-left: 20px;
+    padding-bottom: 10px;
+    margin-right: 20px;
+}
+.label-div input{
+    border-style: solid;
+    padding-block: 20px;
+    padding-left: 40px;
+    width: 100%;
+    height: 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgb(128, 128, 128);
+    font-size: 16px;
+}
+
+.label-div input:focus{
+    outline: none;
+    background-color: aliceblue;
+}
+
+.label-div input[type=text]{
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.label-div input[type=password]{
+    background-position:left;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.label-div button{
+    padding-inline: 20px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-size: 90%;
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+}
+#visibility-icon{
+    transition: 0.5s ease-out;
+    position: relative;
+    bottom: 43px;
+    margin-bottom: -43px;
+    left: calc(100% - 43px);
+    border-radius: 0px;
+    border-width: 2px;
+    border-style: none none none solid;
+    padding-block: 21px;
+    background-size: auto;
+    background-color: rgba(196, 196, 196, 0.3);
+}
+.no-visibility{
+    background-image: url(../icons/visibility_off_black_36dp.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.visibility{
+    background-image: url(../icons/visibility_black_36dp.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#visibility-icon:hover{
+    background-color: rgba(190, 190, 190, 0.3);
+}
+.label-div .send-login{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../icons/login_black_48dp.svg);
+    float: right;
+}
+.label-div button:hover{
+    background-color: rgb(249, 252, 255);
+}
+.label-div button:focus{
+    background-color: aliceblue;
+}
+.card{
+    margin-top: 4cm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.card-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card-login{
+    transition: 0.3s ease;
+    width: 20vw;
+    padding-bottom: 1vh;
+}
+.card-default{
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 3px 3px 0.6em rgb(165, 177, 177);
+}
+
+.card-default:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.card-login label{
+
+    font-size: larger;
+}
+
