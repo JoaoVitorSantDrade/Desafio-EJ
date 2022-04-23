@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='../../public/assets/css/main.css' rel="stylesheet"> <!--Lembrar de colocar {{ }}-->
-        <title>Main Page</title>
+        <link href='../../public/assets/css/carousel.css' rel="stylesheet"> <!--Lembrar de colocar {{ }}-->
+        <link href='../../public/assets/css/form.css' rel="stylesheet"> <!--Lembrar de colocar {{ }}-->
+
+        <title>Main Page - @yield('page-title')</title>
 
         <!--Fonts-->
         <style>
@@ -15,25 +18,28 @@
         <script type="text/javascript" src="{{URL::asset('assets/js/jquery.min.js')}}"></script>-->
     </head>
     <body>
-        <header>
+        <header class="transition">
             <div class="user-info">
-                <img src="../../public/assets/Icons/account_circle_black_48dp.svg">
-                <h2>Placeholder name</h2>
-                <h2>Placeholder cargo</h2>
+                <img class="unselectable" src="../../public/assets/Icons/account_circle_black_48dp.svg">
+                <h2 class="unselectable">Placeholder name</h2>
+                <h2 class="unselectable">Placeholder cargo</h2>
             </div>
             <nav>
                 <ul class="header-extra">
-                    <li><a href=""><h2>Membros</h2></a></li>
-                    <li><a href=""><h2>Cadastrar Usuários</h2></a></li>
+                    <li class="transition"><a href=""><h2>Membros</h2></a></li>
+                    <li class="transition"><a href=""><h2>Cadastrar Usuários</h2></a></li>
                 </ul>
             </nav>
         </header>
         <section class="values-container">
             <h1>A EcompJr</h1>
-            <div class="flex-row">
-                <div class="values-box">
+            <div class="flex-row carousel-box">
+                <div class="values-box transition">
                     <div class="values">
-                        <h3>Missão</h3>
+                        <div class="values-title">
+                            <h3>Missão</h3>
+                            <img class="unselectable" src="../icons/book_FILL0_wght400_GRAD0_opsz48.svg">
+                        </div>
                         <p>
                             Através da vivência empresarial e 
                             trabalho em equipe, formar profissionais
@@ -42,9 +48,12 @@
                         </p>
                     </div>
                 </div>
-                <div class="values-box">
+                <div class="values-box transition">
                     <div class="values">
-                        <h3>Valores</h3>
+                        <div class="values-title">
+                            <h3>Valores</h3>
+                            <img class="unselectable" src="../icons/insights_FILL0_wght400_GRAD0_opsz48.svg">
+                        </div>
                         <p>
                             Ser uma empresa que realiza <b>projetos de
                             impacto</b>, mais <b>conectada ao movimento
@@ -53,9 +62,12 @@
                         </p>
                     </div>
                 </div>
-                <div class="values-box">
+                <div class="values-box transition">
                     <div class="values">
-                        <h3>Visão</h3>
+                        <div class="values-title">
+                            <h3>Visão</h3>
+                            <img class="unselectable" src="../icons/visibility_FILL0_wght400_GRAD0_opsz48.svg">
+                        </div>
                         <p>Os valores de uma empresa guiam a conduta da 
                             mesma. Portanto, a EcompJr baseia-se nos 
                             seguintes valores: <b>Protagonismo, 
@@ -69,3 +81,4 @@
             </div>
         </section>
     </body>
+</html>

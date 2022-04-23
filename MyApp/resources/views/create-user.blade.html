@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='../../public/assets/css/new-user.css' rel="stylesheet"> <!--Lembrar de colocar {{ }}-->
+        <link href='../../public/assets/css/main.css' rel="stylesheet"> <!--Lembrar de colocar {{ }}-->
+        <link href='../../public/assets/css/form.css' rel="stylesheet"> <!--Lembrar de colocar {{ }}-->
+        <title>Cadastrar Usuários</title>
+
+        <!--Fonts-->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300;400;700;900&display=swap');
+        </style>
+
+        <!--<link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.min.css')}}">
+        <script type="text/javascript" src="{{URL::asset('assets/js/jquery.min.js')}}"></script>-->
+        <script src="../js/create-user.js"></script> <!--Passar pro laravel depois-->
+
+    </head>
+    <body>
+        <header class="transition">
+            <div class="user-info">
+                <img class="unselectable" src="../../public/assets/Icons/account_circle_black_48dp.svg">
+                <h2 class="unselectable">Placeholder name</h2>
+                <h2 class="unselectable">Placeholder cargo</h2>
+            </div>
+            <nav>
+                <ul class="header-extra">
+                    <li class="transition"><a href=""><h2>Membros</h2></a></li>
+                    <li class="transition"><a href=""><h2>Cadastrar Usuários</h2></a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="card">
+            <div class="card-modal card-login card-default unselectable">
+                <div class="align-center">
+                    <h2>Cadastrar Usuário</h2>
+                </div>
+                <form name="login" method="post">
+                    @csrf
+                    <section>
+                        <div class="label-div">
+                            <label for="user_name">Nome</label>
+                            <input id="user_name" class="input-user"name="user_nickname" type="text" placeholder="Digite o nome" required>
+                        </div>
+                        <div class="label-div">
+                            <label for="user_nickname">Nome de usuário</label>
+                            <input id="user_nickname" class="input-user" name="user_name" type="text" placeholder="Digite o nome de usuário" required>
+                        </div>
+                        <div class="label-div">
+                            <label for="user-cargo">Cargo</label>
+                            <select class="input-cargo work placeholder-font" id="user-cargo" name="user-cargo" required>
+                                <option class="placeholder-font" value="" disabled selected hidden>Escolha o cargo</option>
+                                <option class="diretor" id="diretor" value="Diretor">Diretor</option>
+                                <option class="consultor" id="consultor" value="Consultor">Consultor</option>
+                                <option class="membro" id="membro" value="Membro">Membro</option>
+                                <option class="trainee" id="trainee" value="Trainee">Trainee</option>
+                              </select>
+                        </div>
+                        <div class="label-div">
+                            <label for="user_psw">Senha</label>
+                            <input id="user_psw" class="input-psw" name="user_psw" type="password" placeholder="Digite a senha" required>
+                            <button id="visibility-icon" class="no-visibility visibility-icon" type="button"></button>
+                        </div>
+                        <div class="label-div">
+                            <input id="user_psw2" class="input-psw" name="user_psw2" type="password" placeholder="Digite a senha novamente" required>
+                            <button id="visibility-icon2" class="no-visibility visibility-icon" type="button"></button>
+                        </div>
+                        <div class="label-div">
+                            <button class="send-login" type="submit"></button>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div>
+    </body>

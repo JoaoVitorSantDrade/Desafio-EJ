@@ -1,0 +1,12 @@
+.diretor{
+    background-image: url(../Icons/cargo/supervisor_account_FILL1_wght400_GRAD0_opsz48.svg);
+}
+.consultor{
+    background-image: url(../Icons/cargo/support_agent_FILL1_wght400_GRAD0_opsz48.svg);
+}
+.membro{
+    background-image: url(../Icons/cargo/hail_FILL1_wght400_GRAD0_opsz48.svg);
+}
+.trainee{
+    background-image: url(../Icons/cargo/person_filled_FILL1_wght400_GRAD0_opsz48.svg);
+}

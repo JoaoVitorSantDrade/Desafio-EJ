@@ -1,0 +1,10 @@
+.not-showing{
+    position: absolute;
+    left: 110vw;
+    display: none;
+}
+.showing{
+    position: absolute;
+    left: 0;
+    display: flex;
+}
