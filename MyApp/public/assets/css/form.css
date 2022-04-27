@@ -13,6 +13,7 @@ body{
 .align-center{
     margin-inline: auto;
 }
+
 label ,input{
     display: flex;
     flex-direction: column;

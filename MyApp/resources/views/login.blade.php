@@ -24,11 +24,6 @@
                     @csrf
                     <section>
                         <div class="label-div">
-<<<<<<< Updated upstream
-                            <label for="nickname">Nome de Usuário</label>
-                            <input id="user_name" class="input-user"name="nickname" type="text" placeholder="Digite seu nome de usuário" required>
-                            @error('name')
-=======
                             <label for="name">Nome</label>
                             <input id="user_name" class="input-name"name="name" type="text" placeholder="Digite seu nome" required>
                             @error('name')
@@ -39,7 +34,6 @@
                             <label for="nickname">Nome de usuário</label>
                             <input id="user_name" class="input-user"name="nickname" type="text" placeholder="Digite seu nome de usuário" required>
                             @error('nickname')
->>>>>>> Stashed changes
                             <p class="error">Nome de usuario já existe!</p>
                             @enderror
                         </div>
