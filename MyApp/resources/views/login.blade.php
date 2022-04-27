@@ -24,13 +24,20 @@
                     @csrf
                     <section>
                         <div class="label-div">
-                            <label for="name">Nome de Usuário</label>
-                            <input id="user_name" class="input-user"name="name" type="text" placeholder="Digite seu nome de usuário" required>
+                            <label for="nickname">Nome de Usuário</label>
+                            <input id="user_name" class="input-user"name="nickname" type="text" placeholder="Digite seu nome de usuário" required>
+                            @error('name')
+                            <p class="error">Nome de usuario já existe!</p>
+                            @enderror
                         </div>
                         <div class="label-div">
                             <label for="password">Senha</label>
                             <input id="user_psw" class="input-psw" name="password" type="password" placeholder="Digite sua senha" required>
+                            @error('password')
+                            <p class="error">Senha com tamanho inválido!</p>
+                            @enderror
                             <button id="visibility-icon" class="no-visibility visibility-icon" type="button"></button>
+                            
                         </div>
                         <div>
                             <div class="label-div">

@@ -19,6 +19,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'nickname' => $this->faker->userName(),
             'password' => '123',
             'remember_token' => Str::random(10),
             'created_at' => now(),

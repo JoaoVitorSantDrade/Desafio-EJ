@@ -27,7 +27,6 @@ use Illuminate\Support\Facades\Route;
 
 // Redireciona para a tela de login
 Route::get('/', [LoginController::class, 'create']);
-
 // Tela Login
 Route::get('/login', [LoginController::class, 'show']);
 

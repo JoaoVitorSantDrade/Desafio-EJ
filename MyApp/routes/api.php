@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // testando
-Route::get('/posts', function() {
-    return response()->json([
-        'posts' => [
-            [
-                'title' => 'Post One'
-            ]
-        ]
-    ]);
-});
+Route::get('/name', [ApiController::class, 'getName']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
