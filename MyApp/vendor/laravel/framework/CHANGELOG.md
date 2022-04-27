@@ -1,6 +1,62 @@
 # Release Notes for 9.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v9.7.0...9.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v9.9.0...9.x)
+
+
+## [v9.9.0](https://github.com/laravel/framework/compare/v9.8.1...v9.9.0) - 2022-04-19
+
+### Added
+- Add getAllTables support for SQLite and SQLServer schema builders ([#41896](https://github.com/laravel/framework/pull/41896))
+- Added withoutEagerLoads() method to Builder ([#41950](https://github.com/laravel/framework/pull/41950))
+- Added 'throw' method to PendingRequest ([#41953](https://github.com/laravel/framework/pull/41953))
+- Configurable pluralizer language and uncountables ([#41941](https://github.com/laravel/framework/pull/41941))
+
+### Fixed
+- Fixed Error in Illuminate/Routing/Exceptions/StreamedResponseException ([#41955](https://github.com/laravel/framework/pull/41955))
+- Fix PHP warnings when rendering long blade string ([#41956](https://github.com/laravel/framework/pull/41956))
+- Fix ExcludeIf regression to use Closure over is_callable() ([#41969](https://github.com/laravel/framework/pull/41969))
+- Fixes applying replacements to multi-level localization arrays ([#42022](https://github.com/laravel/framework/pull/42022))
+
+### Changed
+- Improved Illuminate/Foundation/Http/Middleware/TrimStrings.php and Str::squish() ([#41949](https://github.com/laravel/framework/pull/41949), [#41971](https://github.com/laravel/framework/pull/41971))
+- Use config session domain for maintenance cookie ([#41961](https://github.com/laravel/framework/pull/41961))
+- Revert lazy command forcing ([#41982](https://github.com/laravel/framework/pull/41982))
+
+
+## [v9.8.1](https://github.com/laravel/framework/compare/v9.8.0...v9.8.1) - 2022-04-12
+
+### Reverted
+- Revert "Standardize withCount() & withExists() eager loading aggregates ([#41943](https://github.com/laravel/framework/pull/41943))
+
+
+## [v9.8.0](https://github.com/laravel/framework/compare/v9.7.0...v9.8.0) - 2022-04-12
+
+### Added
+- Added inbound option to CastMakeCommand ([#41838](https://github.com/laravel/framework/pull/41838))
+- Added a way to retrieve the first column of the first row from a query ([#41858](https://github.com/laravel/framework/pull/41858))
+- Make DatabaseManager Macroable ([#41868](https://github.com/laravel/framework/pull/41868))
+- Improve Str::squish() ([#41877](https://github.com/laravel/framework/pull/41877), [#41924](https://github.com/laravel/framework/pull/41924))
+- Added option to disable cached view ([#41859](https://github.com/laravel/framework/pull/41859))
+- Make Connection Class Macroable ([#41865](https://github.com/laravel/framework/pull/41865))
+- Added possibility to discover anonymous Blade components in other folders ([#41637](https://github.com/laravel/framework/pull/41637))
+- Added `Illuminate/Database/Eloquent/Factories/Factory::set()` ([#41890](https://github.com/laravel/framework/pull/41890))
+- Added multibyte support to string padding helper functions ([#41899](https://github.com/laravel/framework/pull/41899))
+- Allow to use custom log level in exception handler reporting ([#41925](https://github.com/laravel/framework/pull/41925))
+
+### Fixed
+- Illuminate/Support/Stringable::exactly() with Stringable value ([#41846](https://github.com/laravel/framework/pull/41846))
+- Fixed afterCommit and RefreshDatabase ([#41782](https://github.com/laravel/framework/pull/41782))
+- Fix null name for email address in `Illuminate/Mail/Message` ([#41870](https://github.com/laravel/framework/pull/41870))
+- Fix seeder property for in-memory tests ([#41869](https://github.com/laravel/framework/pull/41869))
+- Fix empty paths for server.php ([#41933](https://github.com/laravel/framework/pull/41933))
+- Fix ExcludeIf constructor ([#41931](https://github.com/laravel/framework/pull/41931))
+
+### Changed
+- Set custom host to the serve command with environment variable ([#41831](https://github.com/laravel/framework/pull/41831))
+- Add handling of object being passed into old method in Model ([#41842](https://github.com/laravel/framework/pull/41842))
+- Catch permission exception when creating directory ([#41871](https://github.com/laravel/framework/pull/41871))
+- Restore v8 behaviour of base query for relations ([#41918](https://github.com/laravel/framework/pull/41918), [#41923](https://github.com/laravel/framework/pull/41923))
+- Standardize withCount() & withExists() eager loading aggregates ([#41914](https://github.com/laravel/framework/pull/41914))
 
 
 ## [v9.7.0](https://github.com/laravel/framework/compare/v9.6.0...v9.7.0) - 2022-04-05

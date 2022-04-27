@@ -57,5 +57,5 @@
             </div>
         </div> 
     </body>
-    <!--Footer-->
+    <x-footer/>
 </html>

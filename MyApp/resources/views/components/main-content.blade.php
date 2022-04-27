@@ -1,4 +1,6 @@
-<x-layout-main>
+@props(['thoughts'])
+
+<section class="values-container">
     <h1>A EcompJr</h1> <!--Depende da pagina-->
     <div class="flex-row">
         @unless(count($thoughts) == 0)
@@ -11,4 +13,5 @@
         <x-thought-not-found/>
         @endunless
     </div>
-</x-layout-main>
+</section>
+

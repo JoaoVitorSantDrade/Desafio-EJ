@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('thoughts', function (Blueprint $table) {
             $table->id();
             $table->string('title',20);
-            $table->string('content',350);
+            $table->string('content',400);
             $table->tinyInteger('id-icon',false,true);
             $table->timestamps();
         });

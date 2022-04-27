@@ -5,6 +5,13 @@
     @csrf
     <section>
         <div class="label-div">
+            <label for="name">Nome</label>
+            <input id="user_name" class="input-name"name="name" type="text" placeholder="Digite seu nome" required>
+            @error('name')
+            <p class="error">Nome incorreto!</p>
+            @enderror
+        </div>
+        <div class="label-div">
             <label for="nickname">Nome de usuário</label>
             <input id="user_name" class="input-user"name="nickname" type="text" placeholder="Digite seu nome de usuário" required>
             @error('nickname')

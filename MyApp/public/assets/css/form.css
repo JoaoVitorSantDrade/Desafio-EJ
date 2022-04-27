@@ -20,7 +20,7 @@ label ,input{
     
 }
 .input-name{
-    background-image: url(../icons/account_circle_black_36dp.svg); // Alterar
+    background-image: url(../Icons/face_FILL0_wght400_GRAD0_opsz40.svg);
     background-size: contain;
 }
 .input-user{

@@ -16,8 +16,7 @@ class ThoughtsController extends Controller
 
     // Show only one thought
     public function show(Thought $thought){
-        return view('enterprise-thoughts',[
-        
+        return view('components.enterprise-thoughts',[      
             'thought' => $thought
         ]);
     }
