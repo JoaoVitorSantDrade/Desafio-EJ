@@ -18,6 +18,10 @@ label ,input{
     flex-direction: column;
     
 }
+.input-name{
+    background-image: url(../icons/account_circle_black_36dp.svg); // Alterar
+    background-size: contain;
+}
 .input-user{
     background-image: url(../icons/account_circle_black_36dp.svg);
     background-size: contain;
