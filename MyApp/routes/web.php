@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ThoughtsController;
+use App\Models\Thought;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Index - Show all
+// Show - Show only one
+// Create - Show form to create new
+// Store - Store new
+// Edit - Show form to edit
+// Update - Update
+// Destroy - Delete
+
+// Redireciona para a tela de login
+Route::get('/', [LoginController::class, 'create']);
+
+// Tela Login
+Route::get('/login', [LoginController::class, 'show']);
+
+Route::post('/login', [LoginController::class,'store']);
+
+Route::get('/test', [ThoughtsController::class, 'index']);
+
+Route::get('/test/{thought}', [ThoughtsController::class,'show']);
+

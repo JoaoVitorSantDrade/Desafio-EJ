@@ -123,6 +123,12 @@ label ,input{
     background-image: url(../icons/login_black_48dp.svg);
     float: right;
 }
+.label-div .new-user{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../icons/person_add_FILL0_wght400_GRAD0_opsz48.svg);
+    float: left;
+}
 .label-div button:hover{
     background-color: rgb(249, 252, 255);
 }

@@ -8,12 +8,12 @@ window.onload=function(){
         icon.classList.toggle("visibility");
         if(showing === false){
             psw.type = 'text'
-            psw.placeholder = "Digite sua Senha (Visível)"
+            psw.placeholder = "Digite sua senha (Visível)"
             showing = true
         }
         else{
             psw.type = 'password'
-            psw.placeholder = "Digite sua Senha"
+            psw.placeholder = "Digite sua senha"
             showing = false
         }
     })
