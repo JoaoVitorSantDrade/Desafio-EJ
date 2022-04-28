@@ -12,26 +12,39 @@ use Illuminate\Support\Facades\Redirect;
 class LoginController extends Controller
 {
     public function create(){
-        return Redirect::to('/login');
+        return Redirect::to('/entrar');
     }
 
     public function show(){
-        return view('login');
+        return view('login',[
+            'page' => [
+                'type' => 'login',
+                'title' => 'Login'
+            ]
+        ]);
     }
 
-    public function store(Request $request){
+    public function login(Request $request){
         $formFields = $request->validate([
-            'nickname' => ['required', Rule::unique('users','nickname')],
-            'password' => 'required|min:3|max:30'
-        ]);
-        //$string = Http::get('http://127.0.0.1:8000/api/name'); // Timeout - Solucão: https://stackoverflow.com/questions/6014958/why-does-file-get-contents-work-with-google-com-but-not-with-my-site/25651196#25651196
-        // Utilizando solução abaixo enquanto isso
-        $response = Http::get('https://randomuser.me/api/?inc=name');
-        $name = json_decode($response,true);
-        $string = $name['results'][0]['name']['first'] .' '. $name['results'][0]['name']['last'];
+            'nickname' => ['required', Rule::exists('users','nickname')],
+            'password' => 'required'
+        ],
+        [
+            'nickname.exists' => trans('Usuário inexistente'),
+            'nickname.required' => trans('É necessário um nome de usuário'),
+            'password.required' => trans('É necessário uma senha'),
+        ]
 
-        $formFields['name'] = $string;
-        User::create($formFields);
-        return redirect('/');
+        );
+        
+        $name = User::findOfName($formFields['nickname']);
+        $formFields['name'] = $name[0];
+        //Hash password
+        if(auth()->attempt($formFields)){
+            $request->session()->regenerate();
+            return redirect('/principal')->with('message','Você está logado');
+        }
+        return back()->withError(['nickname'=>'Credenciais inválidas'])->onlyInput('nickname');
+
     }
 }

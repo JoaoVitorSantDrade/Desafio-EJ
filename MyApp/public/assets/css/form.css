@@ -32,7 +32,11 @@ label ,input{
     background-size: contain;
     padding-right: 45px;
 }
-
+.input-member{
+    background-image: url(../icons/face_FILL0_wght400_GRAD0_opsz40.svg);
+    background-size: contain;
+    padding-right: 45px;
+}
 .label-div{
     margin-left: 20px;
     padding-bottom: 10px;
@@ -98,6 +102,9 @@ label ,input{
     border-radius: 5px;
     border-style: solid;
 }
+.label-div #psw_confirmation{
+    margin-top: -50px;
+}
 .visibility-icon{
     transition: 0.5s ease-out !important; 
     position: relative !important; 
@@ -122,19 +129,30 @@ label ,input{
     background-position: center;
     background-repeat: no-repeat;
 }
+.search{
+    background-image: url(../icons/search_FILL0_wght700_GRAD200_opsz40.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
 #visibility-icon:hover{
     background-color: rgba(190, 190, 190, 0.3);
 }
-.label-div .send-login{
+.send-login{
     background-position: center;
     background-repeat: no-repeat;
     background-image: url(../icons/login_black_48dp.svg);
     float: right;
 }
-.label-div .new-user{
+.new-user{
     background-position: center;
     background-repeat: no-repeat;
     background-image: url(../icons/person_add_FILL0_wght400_GRAD0_opsz48.svg);
+    float: left;
+}
+.back-page{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../icons/undo_FILL0_wght400_GRAD0_opsz48.svg);
     float: left;
 }
 .label-div button:hover{

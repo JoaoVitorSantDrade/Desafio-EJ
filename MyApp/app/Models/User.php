@@ -12,6 +12,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+
+    public $getter = [
+        'name'
+    ];
     /**
      * The attributes that are mass assignable.
      *
@@ -42,4 +46,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function find($nickname){
+        return self::where('nickname',$nickname)->get();
+    }
+    public static function findOfName($nickname){
+        $user = self::where('nickname',$nickname)->get();
+        return $user->pluck('name');
+    }
 }

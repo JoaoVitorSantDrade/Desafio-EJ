@@ -1,30 +1,34 @@
 
 <!DOCTYPE html>
-<html lang="pt">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{{ ('assets/css/main.css') }}" rel="stylesheet">
-        <title>Nav-bar</title>
-        <!--Fonts-->
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300;400;700;900&display=swap');
-        </style>
-
-        <!--<link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.min.css')}}">
-        <script type="text/javascript" src="{{URL::asset('assets/js/jquery.min.js')}}"></script>-->
-    </head>
+<html>
+    @auth
     <header class="transition">
         <div class="user-info">
-            <img class="unselectable" src="assets/Icons/account_circle_black_48dp.svg">
-            <h2 class="unselectable">Placeholder name</h2>
-            <h2 class="unselectable">Placeholder cargo</h2>
+            <img class="unselectable pointer" src="assets/Icons/account_circle_black_48dp.svg" onclick="location='{{ url("/principal") }}'">
+            <h2 class="unselectable">{{auth()->user()->name}}</h2>
         </div>
         <nav>
             <ul class="header-extra">
-                <li class="transition"><a href=""><h2>Membros</h2></a></li>
-                <li class="transition"><a href=""><h2>Cadastrar Usuários</h2></a></li>
+                <li class="transition">
+                    <button class="no_button" type="button" onclick="location='{{ url("/equipe") }}'">
+                        <h2>Membros</h2>
+                    </button>
+                </li>
+                <li class="transition">
+                    <button class="no_button" type="button" onclick="location='{{ url("/membro") }}'">
+                        <h2>Cadastrar membros</h2>
+                    </button>
+                </li>
+                <li class="transition">
+                    <form name="sair" action="/logout" method="POST">
+                        @csrf
+                        <button class="no_button" type="submit">
+                            <h2>Logout</h2>
+                        </button>   
+                    </form>
+                </li>    
             </ul>
         </nav>
     </header>
+    @endauth
 </html>

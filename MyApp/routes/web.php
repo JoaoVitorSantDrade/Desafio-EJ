@@ -1,10 +1,14 @@
 <?php
 
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ThoughtsController;
 use App\Models\Thought;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ThoughtsController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,13 +30,27 @@ use Illuminate\Support\Facades\Route;
 // Destroy - Delete
 
 // Redireciona para a tela de login
-Route::get('/', [LoginController::class, 'create']);
+Route::get('/', [LoginController::class, 'create'])->name('login');
 // Tela Login
-Route::get('/login', [LoginController::class, 'show']);
+Route::get('/entrar', [LoginController::class, 'show'])->middleware('guest');
+// Logar
+Route::post('/login',[LoginController::class,'login'])->middleware('guest');
 
-Route::post('/login', [LoginController::class,'store']);
+// Tela de cadastro 
+Route::get('/cadastro',[UserController::class,'create'])->middleware('guest');
+// Cadastro -> Logar
+Route::post('/usuario',[UserController::class,'store'])->middleware('guest');
+// Deslogar
+Route::post('/logout', [UserController::class, 'logout']);
 
-Route::get('/test', [ThoughtsController::class, 'index']);
+// Tela de cadastro de membros
+Route::get('/membro',[MemberController::class, 'create'])->middleware('auth');
 
-Route::get('/test/{thought}', [ThoughtsController::class,'show']);
+// Cadastra membro
+Route::post('/membro', [MemberController::class,'store'])->middleware('auth');
+
+Route::get('/equipe', [MemberController::class,'index'])->middleware('auth');
+
+Route::get('/principal',[PageController::class,'show'])->name('home')->middleware('auth');
+
 
