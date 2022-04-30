@@ -38,7 +38,7 @@ class UserController extends Controller
 
         //Hash Password
         $formFields['password'] = bcrypt($formFields['password']);
-
+        $formFields['name'] = strtoupper($formFields['name']);
         // Cria usuario
         $user = User::create($formFields);
 

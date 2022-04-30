@@ -39,7 +39,6 @@ class LoginController extends Controller
         
         $name = User::findOfName($formFields['nickname']);
         $formFields['name'] = $name[0];
-        //Hash password
         if(auth()->attempt($formFields)){
             $request->session()->regenerate();
             return redirect('/principal')->with('message','Você está logado');

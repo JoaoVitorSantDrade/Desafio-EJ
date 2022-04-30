@@ -166,7 +166,8 @@ header:hover{
 }
 .values p{
     position: relative;
-    bottom: 40px;
+    bottom: 30px;
+    margin-top: 20px;
     margin-bottom: -10px;
     font-size: 20px;
     color:white;
