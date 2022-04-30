@@ -134,7 +134,7 @@ label ,input{
     background-position: center;
     background-repeat: no-repeat;
 }
-#visibility-icon:hover{
+.visibility-icon:hover{
     background-color: rgba(190, 190, 190, 0.3);
 }
 .send-login{
@@ -178,7 +178,7 @@ label ,input{
 
 .card-login{
     transition: 0.3s ease;
-    width: 35vw;
+    width: 50vw;
     padding-bottom: 1vh;
 }
 .card-default{
@@ -219,4 +219,12 @@ label ,input{
     margin-bottom: -10;
     padding: 0px;
     color: crimson;
+}
+
+@media(max-width: 1100px){
+    .card-login{
+        transition: 0.3s ease;
+        width: 70vw;
+        padding-bottom: 1vh;
+    }
 }
